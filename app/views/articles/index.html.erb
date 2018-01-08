@@ -13,15 +13,11 @@
 			<td><%= article.description %></td>
 			<td>
 				<div class="btn-group" role="group" aria-label="...">
-			  	<a href=<%= edit_article_path(article) %> class="btn btn-default">Update</a>
-			  	<a href=<%= article_path(article) %> class="btn btn-default">Show</a>
-			  	<a href=<%= article_path(article) %> :method = "destroy", class="btn btn-default">Deleteroo</a>
-
+			  	<a href=<%= edit_article_path(article) %> class="btn btn-default btn-success">Update</a>
+			  	<a href=<%= article_path(article) %> class="btn btn-primary">Show</a>
+			  	<%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
 				</div>
 			</td>
-			<td><%= link_to "Update", edit_article_path(article) %></td>
-			<td><%= link_to "Show", article_path(article) %></td>
-			<td><%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Are you sure?"} %></td>
 		</tr>
 	<% end %>
 	</table>
